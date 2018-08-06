@@ -1,17 +1,52 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content>
+  <div class="container-slides" style="margin-top:-30px;">
+      <ion-slides pager>
+  
+        <ion-slide class="slide_image">
+          <img class="foto" [src]="'assets/imgs/' + array_dados_perfis[perfil_atual].img_01">
+         
+        </ion-slide>
+  
+        <ion-slide class="slide_image">
+          <img class="foto" [src]="'assets/imgs/' + array_dados_perfis[perfil_atual].img_02">
+         
+        </ion-slide>
+  
+        <ion-slide class="slide_image">
+         
+          <img class="foto" [src]="'assets/imgs/' + array_dados_perfis[perfil_atual].img_03">
+          
+        </ion-slide>
+  
+      </ion-slides>
+    </div>
+
+    <div class="identificacao" >
+      <!-- Nome do aluno -->
+      <h3>{{ array_dados_perfis[perfil_atual].nome }} {{ array_dados_perfis[perfil_atual].sobrenome }}</h3>
+      <p>
+        <!-- Curso do aluno -->
+        <b>Curso:</b> {{ array_dados_perfis[perfil_atual].curso }}<br>
+
+        <!-- Período do aluno -->
+        <b>Período:</b> {{ array_dados_perfis[perfil_atual].periodo }}</p>
+    </div>
+    
+  
+    <div class="botoes" style="margin-top:10px;">
+      <!-- Botão ignorar -->
+      <button class="botao botaoIgnorar" ion-button icon-only (click)="btIgnorar()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+      
+      <!-- Botão superlike -->
+      <button class="botao botaoSuperLike" ion-button icon-only (click)="btSuperLike()">
+        <ion-icon name="md-mail"></ion-icon>
+      </button>
+      
+      <!-- Botão like -->
+      <button class="botao botaoLike" ion-button icon-only (click)="btLike()">
+        <ion-icon name="md-heart"></ion-icon>
+      </button>
+    </div>
+  </ion-content>
